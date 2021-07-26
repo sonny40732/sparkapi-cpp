@@ -1,5 +1,7 @@
 #include "ApiCode.h"
 
+std::map<int, ApiCode *> ApiCode::MAP = std::map<int, ApiCode *>();
+
 const ApiCode ApiCode::NOT_FOUND = ApiCode(404, "Not found");
 const ApiCode ApiCode::NOT_ALLOWED = ApiCode(405, "Method not allowed");
 const ApiCode ApiCode::INVALID_KEY = ApiCode(1000, "Invalid API key and/or request signed improperly");
@@ -40,6 +42,14 @@ const ApiCode ApiCode::USER_ALREADY_SUBSCRIBED_TO_SEARCH = ApiCode(2505, "The cu
 const ApiCode ApiCode::RESO_VERSION_NOT_SUPPORTED = ApiCode(3000, "The RESO data dictionary version you requested is not supported.");
 
 const ApiCode ApiCode::UNKNOWN_API_CODE = ApiCode(0, "");
+
+ApiCode *ApiCode::get(int code) {
+    if (ApiCode::MAP.find(code) != ApiCode::MAP.end())
+        return ApiCode::MAP[code];
+    else
+        return ApiCode::MAP[0];
+}
+
 
 
 

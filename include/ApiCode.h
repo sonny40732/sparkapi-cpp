@@ -3,16 +3,41 @@
 
 #include <string>
 #include <utility>
+#include <map>
 
+/**
+ * ApiCode is an implementation of all the SparkAPI Error Codes
+ * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+ */
 class ApiCode {
 
     private:
+        /**
+         * The std::map for reverse lookups
+         */
+        static std::map<int, ApiCode *> MAP;
+        /**
+         * The SparkApi error code
+         */
         int code;
+        /**
+         * The message for the error
+         * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+         */
         std::string message;
 
+        /**
+         * Constructor for SparkAPi class<br>
+         * Objects should only be created in accordance to the see also link<br>
+         * With the exception of the UNKNOWN_API_CODE with should always be (0, "")
+         * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+         * @param code: SparkApi error code
+         * @param message: message for the error code
+         */
         ApiCode(int code, std::string message) {
             this->code = code;
             this->message = std::move(message);
+            MAP.emplace(this->code, this);
         }
 
     public:
@@ -58,16 +83,27 @@ class ApiCode {
 
         static const ApiCode UNKNOWN_API_CODE;
 
+        /**
+         * @return The Code of the APiCode object
+         */
         [[nodiscard]] int getCode() const {
             return this->code;
         }
 
+        /**
+         * @return the message of the ApiCode object
+         */
         [[nodiscard]] std::string getMessage() const {
             return this->message;
         }
 
+        /**
+         * Reverse lookup for ApiCode
+         * @param code: The SparkAPi error code
+         * @return A pointer to the APiCode static object for that error code or ApiCode::UNKNOWN_API_CODE
+         */
+        static ApiCode* get(int code);
+
 };
-
-
 
 #endif //SPARKAPI_CPP_APICODE_H
