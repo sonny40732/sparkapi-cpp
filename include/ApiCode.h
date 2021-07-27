@@ -50,16 +50,28 @@ class ApiCode {
          * @param code: SparkApi error code
          * @param message: message for the error code
          */
-        ApiCode(int code, std::string message) {
-            this->code = code;
-            this->message = std::move(message);
-            MAP.emplace(this->code, this);
-        }
+        ApiCode(int code, std::string message);
 
     public:
+        /**
+             * @return The Code of the APiCode object
+             */
+        [[nodiscard]] int getCode() const;
+
+        /**
+         * @return the message of the ApiCode object
+         */
+        [[nodiscard]] std::string getMessage() const;
+
+        /**
+         * Reverse lookup for ApiCode
+         * @param code: The SparkAPi error code
+         * @return A pointer to the APiCode static object for that error code or ApiCode::UNKNOWN_API_CODE
+         */
+        static ApiCode* get(int code);
+
         static const ApiCode NOT_FOUND;
         static const ApiCode NOT_ALLOWED;
-
         static const ApiCode INVALID_KEY;
         static const ApiCode DISABLED_KEY;
         static const ApiCode AUTH_NOT_PERMITTED;
@@ -79,7 +91,6 @@ class ApiCode {
         static const ApiCode INVALID_WRITE;
         static const ApiCode DATA_VALIDATION_FAILED;
         static const ApiCode PREVIOUS_DATA_PROHIBITED;
-
         static const ApiCode PORTAL_REQUIRED;
         static const ApiCode PORTAL_ALREADY_EXISTS;
         static const ApiCode RESOURCE_UNAVAILABLE;
@@ -88,7 +99,6 @@ class ApiCode {
         static const ApiCode LONG_REQUEST_CANCELLED;
         static const ApiCode LONG_REQUEST_FILTER_OR_ORDERBY_CANCELLED;
         static const ApiCode RATE_LIMIT_EXCEEDED;
-
         static const ApiCode RESERVED;
         static const ApiCode SAVED_SEARCH_UNAVAILBLE;
         static const ApiCode EMAIL_LINK_UNAVAILBLE;
@@ -96,30 +106,7 @@ class ApiCode {
         static const ApiCode SEARCH_CRITERIA_RESTRICTIONS;
         static const ApiCode USER_ALREADY_SUBSCRIBED_TO_SEARCH;
         static const ApiCode RESO_VERSION_NOT_SUPPORTED;
-
         static const ApiCode UNKNOWN_API_CODE;
-
-        /**
-         * @return The Code of the APiCode object
-         */
-        [[nodiscard]] int getCode() const {
-            return this->code;
-        }
-
-        /**
-         * @return the message of the ApiCode object
-         */
-        [[nodiscard]] std::string getMessage() const {
-            return this->message;
-        }
-
-        /**
-         * Reverse lookup for ApiCode
-         * @param code: The SparkAPi error code
-         * @return A pointer to the APiCode static object for that error code or ApiCode::UNKNOWN_API_CODE
-         */
-        static ApiCode* get(int code);
-
 };
 
 #endif //SPARKAPI_CPP_APICODE_H
