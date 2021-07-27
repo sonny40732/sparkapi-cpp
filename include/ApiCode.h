@@ -23,7 +23,8 @@
 
 /**
  * ApiCode is an implementation of all the SparkAPI Error Codes
- * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+ * @see <a href="http://sparkplatform.com/docs/supporting_documentation/error_codes">
+ * http://sparkplatform.com/docs/supporting_documentation/error_codes</a>
  */
 class ApiCode {
 
@@ -34,11 +35,14 @@ class ApiCode {
         static std::map<int, ApiCode *> MAP;
         /**
          * The SparkApi error code
+         * @see <a href="http://sparkplatform.com/docs/supporting_documentation/error_codes">
+        * http://sparkplatform.com/docs/supporting_documentation/error_codes</a>
          */
         int code;
         /**
          * The message for the error
-         * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+         * @see <a href="http://sparkplatform.com/docs/supporting_documentation/error_codes">
+         * http://sparkplatform.com/docs/supporting_documentation/error_codes</a>
          */
         std::string message;
 
@@ -46,7 +50,8 @@ class ApiCode {
          * Constructor for SparkAPi class<br>
          * Objects should only be created in accordance to the see also link<br>
          * With the exception of the UNKNOWN_API_CODE with should always be (0, "")
-         * @see http://sparkplatform.com/docs/supporting_documentation/error_codes
+         * @see <a href="http://sparkplatform.com/docs/supporting_documentation/error_codes">
+         * http://sparkplatform.com/docs/supporting_documentation/error_codes</a>
          * @param code: SparkApi error code
          * @param message: message for the error code
          */
