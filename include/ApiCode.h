@@ -73,7 +73,7 @@ class ApiCode {
          * @param code: The SparkAPi error code
          * @return A pointer to the APiCode static object for that error code or ApiCode::UNKNOWN_API_CODE
          */
-        static ApiCode* get(int code);
+        [[nodiscard]] static ApiCode* get(int code);
 
         static const ApiCode NOT_FOUND;
         static const ApiCode NOT_ALLOWED;
