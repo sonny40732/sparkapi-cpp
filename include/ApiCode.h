@@ -55,7 +55,7 @@ class ApiCode {
          * @param code: SparkApi error code
          * @param message: message for the error code
          */
-        ApiCode(int code, std::string message);
+        ApiCode(const int &code, const std::string &message);
 
     public:
         /**

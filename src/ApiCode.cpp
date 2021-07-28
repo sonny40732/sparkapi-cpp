@@ -18,9 +18,9 @@
 
 std::map<int, ApiCode *> ApiCode::MAP = std::map<int, ApiCode *>();
 
-ApiCode::ApiCode(int code, std::string message) {
+ApiCode::ApiCode(const int &code, const std::string &message) {
     this->code = code;
-    this->message = std::move(message);
+    this->message = message;
     MAP.emplace(this->code, this);
 }
 
