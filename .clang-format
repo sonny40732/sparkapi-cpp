@@ -1,6 +1,6 @@
 # Created by Sonny40732 on July 29, 2021
 BasedOnStyle: LLVM
-AccessModifierOffset: 2
+AccessModifierOffset: 0
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: None
 AlignOperands: Align
