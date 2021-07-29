@@ -17,9 +17,9 @@
 #ifndef SPARKAPI_CPP_APICODE_H
 #define SPARKAPI_CPP_APICODE_H
 
-#include <string>
-#include <utility>
-#include <map>
+#import <string>
+#import <utility>
+#import <map>
 
 /**
  * ApiCode is an implementation of all the SparkAPI Error Codes
