@@ -24,18 +24,18 @@ ApiCode::ApiCode(const int &code, const std::string &message) {
     MAP.emplace(this->code, this);
 }
 
-inline ApiCode* ApiCode::get(int code) {
+ApiCode* ApiCode::get(int code) {
     if (ApiCode::MAP.find(code) != ApiCode::MAP.end())
         return ApiCode::MAP[code];
     else
         return ApiCode::MAP[0];
 }
 
-inline int ApiCode::getCode() const {
+int ApiCode::getCode() const {
     return this->code;
 }
 
-inline std::string ApiCode::getMessage() const {
+std::string ApiCode::getMessage() const {
     return this->message;
 }
 
