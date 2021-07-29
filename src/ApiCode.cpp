@@ -19,24 +19,24 @@
 std::map<int, ApiCode *> ApiCode::MAP = std::map<int, ApiCode *>();
 
 ApiCode::ApiCode(const int &code, const std::string &message) {
-    this->code = code;
-    this->message = message;
-    MAP.emplace(this->code, this);
+  this->code = code;
+  this->message = message;
+  MAP.emplace(this->code, this);
 }
 
 ApiCode* ApiCode::get(int code) {
-    if (ApiCode::MAP.find(code) != ApiCode::MAP.end())
-        return ApiCode::MAP[code];
-    else
-        return ApiCode::MAP[0];
+  if (ApiCode::MAP.find(code) != ApiCode::MAP.end())
+    return ApiCode::MAP[code];
+  else
+    return ApiCode::MAP[0];
 }
 
 int ApiCode::getCode() const {
-    return this->code;
+  return this->code;
 }
 
 std::string ApiCode::getMessage() const {
-    return this->message;
+  return this->message;
 }
 
 const ApiCode ApiCode::NOT_FOUND = ApiCode(404, "Not found");
