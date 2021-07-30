@@ -27,7 +27,7 @@ AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: Empty
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None #**Deprecated**
-AlwaysBreakAfterReturnType: AllDefinitions
+AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: Yes
 AttributeMacros: [
@@ -122,12 +122,12 @@ ObjCSpaceBeforeProtocolList: true
 PenaltyBreakAssignment: 0
 PenaltyBreakBeforeFirstCallParameter: 0
 PenaltyBreakComment: 0
-PenaltyBreakFirstLessLess: 5
-PenaltyBreakString: 10
+PenaltyBreakFirstLessLess: 0
+PenaltyBreakString: 1000
 PenaltyBreakTemplateDeclaration: 3
 PenaltyExcessCharacter: 10000
-PenaltyIndentedWhitespace: 0
-PenaltyReturnTypeOnItsOwnLine: 1
+PenaltyIndentedWhitespace: 100
+PenaltyReturnTypeOnItsOwnLine: 0
 PointerAlignment: Left
 RawStringFormats:
   - Language: TextProto
