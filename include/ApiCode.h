@@ -119,4 +119,4 @@ class ApiCode {
   static const ApiCode UNKNOWN_API_CODE;
 };
 
-#endif   // SPARKAPI_CPP_APICODE_H
+#endif   //SPARKAPI_CPP_APICODE_H
