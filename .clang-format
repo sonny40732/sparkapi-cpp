@@ -1,5 +1,5 @@
 # Created by Sonny40732 on July 29, 2021
-# Modified by Sonny40732 on July 30, 2021
+# Modified by Sonny40732 on January 1, 2022,
 # Some options are not for C++ ex. JS, Java
 # They are included for the event that
 # Other languages code is used in the project
@@ -8,7 +8,7 @@
 BasedOnStyle: LLVM
 AccessModifierOffset: 0
 AlignAfterOpenBracket: Align
-#AlignArrayOfStructure: Right ##Not available until Clang-Format 13 is released fully
+AlignArrayOfStructures: Right
 AlignConsecutiveAssignments: None
 AlignConsecutiveBitFields: None
 AlignConsecutiveDeclarations: None
@@ -73,7 +73,7 @@ Cpp11BracedListStyle: true
 DeriveLineEnding: false
 DerivePointerAlignment: false
 DisableFormat: false
-#EmptyLineAfterAccessModifier: Always  ##Not available until Clang-Format 13 is released fully
+EmptyLineAfterAccessModifier: Always
 EmptyLineBeforeAccessModifier: Always
 FixNamespaceComments: true
 ForEachMacros: [
@@ -89,7 +89,7 @@ IncludeCategories:
     Priority:  3
 IncludeIsMainRegex: ""
 IncludeIsMainSourceRegex: ""
-#IndentAccessModifiers: true ##Not available until Clang-Format 13 is released fully
+IndentAccessModifiers: true
 IndentCaseBlocks: false
 IndentCaseLabels: true
 IndentExternBlock: Indent
@@ -98,7 +98,7 @@ IndentPPDirectives: BeforeHash
 IndentRequires: true
 IndentWidth: 2
 IndentWrappedFunctionNames: false
-#InsertTrailingCommas: null ##Non-compatible with back pinning
+InsertTrailingCommas: None
 JavaImportGroups: [
     'com',
     'org'
@@ -106,7 +106,7 @@ JavaImportGroups: [
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
 KeepEmptyLinesAtTheStartOfBlocks: true
-#LamdaBodyIndentation: OuterScope ##Not available until Clang-Format 13 is released fully
+LambdaBodyIndentation: OuterScope
 MacroBlockBegin: ""
 MacroBlockEnd: ""
 MaxEmptyLinesToKeep: 2
@@ -137,9 +137,9 @@ RawStringFormats:
     EnclosingFunctions:
       - 'PARSE_TEXT_PROTO'
     BasedOnStyle: Google
-#ReferenceAlignment: Right ##Not available until Clang-Format 13 is released fully
+ReferenceAlignment: Right
 ReflowComments: true
-#ShortNamespaceLines: 0  ##Not available until Clang-Format 13 is released fully
+ShortNamespaceLines: 0
 SortIncludes: CaseInsensitive
 SortJavaStaticImport: Before
 SortUsingDeclarations: true
